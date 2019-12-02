@@ -1,6 +1,6 @@
 ---
 title: React vs Angular - It's All About State?
-date: "2015-05-28T22:40:32.169Z"
+date: '2015-05-28T22:40:32.169Z'
 description: This article compares Angular and React ecosystems exposing how the two manage state and data flow in a modern web application.
 ---
 
@@ -19,30 +19,30 @@ Just as its predecessor (angularjs), Angular comes with Dependency Injection so 
 To accomplish that we firstly define our service:
 
 ```ts
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core'
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root'
 })
 export class CountService {
-  count: number;
+  count: number
 
-  private;
+  private
 
   constructor() {
-    this.count = 0;
+    this.count = 0
   }
 
   getCount(): number {
-    return this.count;
+    return this.count
   }
 
   increment(): number {
-    return ++this.count;
+    return ++this.count
   }
 
   decrement(): number {
-    return --this.count;
+    return --this.count
   }
 }
 ```
@@ -58,31 +58,54 @@ And later inject it into our component:
 <p>Count: {{count}}</p>
 ```
 
-```ts
-// app.component.ts
-import { Component, OnInit } from "@angular/core";
-import { CountService } from "./count.service";
+```jsx
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-@Component({
-  selector: "my-app",
-  templateUrl: "app.component.html",
-  styleUrls: ["app.component.css"],
-})
-export class AppComponent implements OnInit {
-  count: number;
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
-  constructor(private countService: CountService) {}
+class BlogIndex extends React.Component {
+  render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
 
-  onIncrementButtonClick(): void {
-    this.count = this.countService.increment();
-  }
-
-  onDecrementButtonClick(): void {
-    this.count = this.countService.decrement();
-  }
-
-  ngOnInit(): void {
-    this.count = this.countService.getCount();
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO title="Artigos" />
+        <Bio />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug
+          return (
+            <article key={node.fields.slug}>
+              <header style={{ marginBottom: 5 }}>
+                <h3
+                  style={{
+                    marginBottom: 0
+                  }}
+                >
+                  <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                    {title}
+                  </Link>
+                </h3>
+                <small>
+                  {node.frontmatter.date} - {node.fields.readingTime.text}
+                </small>
+              </header>
+              <section>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: node.frontmatter.description || node.excerpt
+                  }}
+                />
+              </section>
+            </article>
+          )
+        })}
+      </Layout>
+    )
   }
 }
 ```
@@ -94,3 +117,7 @@ What I want you to notice is that we can **_inject_** our `CountService` into ou
 In this example, our `CountService` **_lives_** for the entire lifetime of our application and its provided in the root (line 4) of our app, what tells us that anything (module, component, other services) can require that service through the syntax we just saw.
 
 _(under construction)_
+
+![Codigo Aqui](./code.png)
+
+![Codigo Aqui](./code2.png)
