@@ -2,6 +2,8 @@
 title: Hello World
 date: '2015-05-01T22:12:03.284Z'
 description: 'Hello World'
+featuredImage: ./featured-image.jpg
+featuredImageCaption: Caption goes here and there
 ---
 
 This is my first post on my new fake blog! How exciting!

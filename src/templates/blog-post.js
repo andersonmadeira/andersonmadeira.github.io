@@ -1,10 +1,11 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import Bio from '../components/bio'
+import Img from 'gatsby-image'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -23,7 +24,7 @@ class BlogPostTemplate extends React.Component {
             <h1
               style={{
                 marginTop: rhythm(1),
-                marginBottom: 0,
+                marginBottom: 0
               }}
             >
               {post.frontmatter.title}
@@ -32,16 +33,21 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1),
+                marginBottom: rhythm(1)
               }}
             >
               {post.frontmatter.date} - {post.fields.readingTime.text}
             </p>
+            <Img
+              sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+              style={{ marginBottom: 10 }}
+              title={post.frontmatter.featuredImageCaption}
+            />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
             style={{
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(1)
             }}
           />
           <footer>
@@ -56,7 +62,7 @@ class BlogPostTemplate extends React.Component {
               flexWrap: `wrap`,
               justifyContent: `space-between`,
               listStyle: `none`,
-              padding: 0,
+              padding: 0
             }}
           >
             <li>
@@ -103,6 +109,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImageCaption
+        featuredImage {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }
