@@ -1,9 +1,7 @@
-import Typography from "typography"
-import MoragaTheme from "typography-theme-moraga"
+import Typography from 'typography'
+import nordTheme from 'typography-theme-nord'
 
-MoragaTheme.headerWeight = 400
-
-const typography = new Typography(MoragaTheme)
+const typography = new Typography(nordTheme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

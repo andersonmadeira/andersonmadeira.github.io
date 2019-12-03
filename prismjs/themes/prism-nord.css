@@ -3,6 +3,12 @@
 /*********************************************************
 * General
 */
+pre[class*='language-'] {
+  border-radius: 8px;
+  box-shadow: rgba(184, 194, 215, 0.25) 0px 4px 6px,
+    rgba(184, 194, 215, 0.1) 0px 5px 7px;
+}
+
 pre[class*='language-'],
 code[class*='language-'] {
   color: #d8dee9;
@@ -22,7 +28,6 @@ code[class*='language-'] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  border-radius: 15px;
 }
 pre[class*='language-']::selection,
 code[class*='language-']::selection,
@@ -134,4 +139,22 @@ pre[class*='language-'] > code[class*='language-'] {
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
+}
+/*********************************************************
+* Line numbers style
+*/
+pre[class*='language-'].line-numbers {
+  padding-left: 2.8em;
+}
+
+span.line-numbers-rows {
+  padding: 1em 0.5em;
+}
+
+pre.line-numbers > span.line-numbers-rows {
+  border-right: 0;
+}
+
+span.line-numbers-rows > span:before {
+  color: #4c566a;
 }
