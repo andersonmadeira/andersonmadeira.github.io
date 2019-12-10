@@ -29,7 +29,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            <small
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
@@ -37,12 +37,7 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date} - {post.fields.readingTime.text}
-            </p>
-            <Img
-              sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-              style={{ marginBottom: 10 }}
-              title={post.frontmatter.featuredImageCaption}
-            />
+            </small>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -109,14 +104,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
-        featuredImageCaption
-        featuredImage {
-          childImageSharp {
-            sizes(maxWidth: 630) {
-              ...GatsbyImageSharpSizes
-            }
-          }
-        }
       }
     }
   }

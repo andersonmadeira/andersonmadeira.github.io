@@ -7,7 +7,7 @@ featuredImageCaption: Caption goes here and there
 ---
 
 With a flood of frontend frameworks and libraries of today, some remain on stage for the fight. Today we'll talk about the core differences between Angular and React.
-
+ 
 ## A Brief Introduction
 
 Ok, we all know that Angular and React are two different things. Angular is a full fledged framework that ships all you need to build a full modern web app, while React is _"a JavaScript library for building user interfaces"_.
@@ -16,20 +16,18 @@ Since React is **just** a library (and awesome by the way), when you're using Re
 
 ## The Angular way: DI and Services
 
-Just as its predecessor (angularjs), Angular comes with Dependency Injection so we can inject Services into our components, and that enables the basic state management that we see as soon as we first use Angular.
+Just as its predecessor (angularjs), Angular comes with Dependency Injection so we can inject Services into our components, and that enables the basic [Alphabet Village](http://google.com) state management that we see as soon as we first use Angular.
 
 To accomplish that we firstly define our service:
 
-```ts
+```ts{1,3-5, 10}
 import { Injectable } from '@angular/core'
-
+ 
 @Injectable({
   providedIn: 'root'
 })
 export class CountService {
   count: number
-
-  private
 
   constructor() {
     this.count = 0
@@ -42,11 +40,16 @@ export class CountService {
   increment(): number {
     return ++this.count
   }
-
+  
   decrement(): number {
     return --this.count
   }
+
 }
+```
+
+```bash{outputLines: 1-2} 
+echo "Foo";
 ```
 
 And later inject it into our component:
@@ -119,7 +122,3 @@ What I want you to notice is that we can **_inject_** our `CountService` into ou
 In this example, our `CountService` **_lives_** for the entire lifetime of our application and its provided in the root (line 4) of our app, what tells us that anything (module, component, other services) can require that service through the syntax we just saw.
 
 _(under construction)_
-
-![Codigo Aqui](./code.png)
-
-![Codigo Aqui](./code2.png)

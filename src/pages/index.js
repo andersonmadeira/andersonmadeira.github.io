@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug}>
+            <article key={node.fields.slug} style={{ marginTop: '1.5em' }}>
               <header style={{ marginBottom: 5 }}>
                 <h3
                   style={{
@@ -42,10 +42,6 @@ class BlogIndex extends React.Component {
                   style={{ marginBottom: 10 }}
                 />
               </section>
-              <Img
-                sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                style={{ marginBottom: 50 }}
-              />
             </article>
           )
         })}
@@ -77,13 +73,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            featuredImage {
-              childImageSharp {
-                sizes(maxWidth: 630, maxHeight: 200) {
-                  ...GatsbyImageSharpSizes
-                }
-              }
-            }
           }
         }
       }

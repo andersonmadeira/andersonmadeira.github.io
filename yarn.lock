@@ -11821,10 +11821,10 @@ typography-theme-moraga@^0.16.19:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.16.19"
 
-typography-theme-nord@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/typography-theme-nord/-/typography-theme-nord-0.1.0.tgz#5b97bc431181fa4df57c28982c9ad63bb60c2d5b"
-  integrity sha512-xbRG/BwzxZfDltM/U0pTt9ufF3ES1D9piH72U0jQA6EWXdC7zHBpEG9TjHdiMMN4ElGpktEkwUX7MZNHbz+KKQ==
+typography-theme-nord@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/typography-theme-nord/-/typography-theme-nord-0.1.3.tgz#7e1603b1430d7511216c5e34e8ab153890631137"
+  integrity sha512-RFHv7OzC2+F2t0EXiFMvf6i11jKvT7ed1mFZ3TYwTe6YOF/0ljlz3p0kcNbdBKoolHqIYM2po1x9uNspT4bdpg==
 
 typography@^0.16.19:
   version "0.16.19"
