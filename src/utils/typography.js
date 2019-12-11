@@ -1,5 +1,5 @@
 import Typography from 'typography'
-import nordTheme from 'typography-theme-nord'
+import nordTheme from './nordTheme'
 
 const typography = new Typography(nordTheme)
 

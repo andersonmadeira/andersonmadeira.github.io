@@ -2,11 +2,10 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 
 import Bio from '../components/bio'
-import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
-import { DiscussionEmbed } from 'disqus-react'
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -14,8 +13,9 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const disqusConfig = {
-      shortname: process.env.GATSBY_DISQUS_NAME,
-      config: { identifier: post.fields.slug, title: post.frontmatter.title }
+      url: `${this.props.location.pathname}`,
+      identifier: post.id,
+      title: post.title,
     }
 
     return (
@@ -43,6 +43,7 @@ class BlogPostTemplate extends React.Component {
             >
               {post.frontmatter.date} - {post.fields.readingTime.text}
             </small>
+            <CommentCount config={disqusConfig} placeholder={'...'} />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -82,7 +83,7 @@ class BlogPostTemplate extends React.Component {
           </ul>
         </nav>
 
-        <DiscussionEmbed {...disqusConfig} />
+        <Disqus config={disqusConfig} />
       </Layout>
     )
   }

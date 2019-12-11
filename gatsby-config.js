@@ -49,6 +49,12 @@ module.exports = {
               showLineNumbers: false
             }
           },
+          {
+            resolve: 'gatsby-plugin-disqus',
+            options: {
+              shortname: 'andersonmadeira-dev'
+            }
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           `gatsby-remark-reading-time`
