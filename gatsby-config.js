@@ -52,7 +52,7 @@ module.exports = {
           {
             resolve: 'gatsby-plugin-disqus',
             options: {
-              shortname: 'andersonmadeira-dev'
+              shortname: 'andersonmadeira'
             }
           },
           `gatsby-remark-copy-linked-files`,
