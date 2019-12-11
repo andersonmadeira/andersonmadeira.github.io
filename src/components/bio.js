@@ -27,6 +27,7 @@ const Bio = () => {
       site {
         siteMetadata {
           author
+          shortDescription
           social {
             linkedin
             github
@@ -37,7 +38,7 @@ const Bio = () => {
     }
   `)
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social, shortDescription } = data.site.siteMetadata
 
   return (
     <div
@@ -65,9 +66,8 @@ const Bio = () => {
           flexDirection: "column",
         }}
       >
-        <p style={{ marginBottom: 5 }}>
-          Full Stack Developer. Here I write about code and related
-          technologies.
+        <p style={{ marginBottom: 5, marginTop: 5 }}>
+          {shortDescription}
         </p>
         <div>
           <SocialIcon

@@ -2,10 +2,11 @@ module.exports = {
   siteMetadata: {
     title: `Anderson Madeira Blog`,
     author: `Anderson Madeira`,
+    shortDescription: `Artigos sobre desenvolvimento de Software e coisas relacionadas`,
     description: `Artigos sobre desenvolvimento de Software e coisas relacionadas`,
-    siteUrl: `https://www.andersonmadeira.dev/`,
+    siteUrl: `https://andersonmadeira.github.io`,
     social: {
-      linkedin: `https://www.linkedin.com/in/andersonmadeiracs/`,
+      linkedin: `https://www.linkedin.com/in/andersonmadeiracs`,
       github: `https://www.github.com/andersonmadeira`,
       twitter: `https://twitter.com/andersonmadcs`
     }

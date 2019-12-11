@@ -9,14 +9,17 @@ import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 class BlogPostTemplate extends React.Component {
   render() {
+    const siteUrl = 'https://andersonmadeira.github.io'
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     const disqusConfig = {
-      url: `${this.props.location.pathname}`,
+      url: `${siteUrl}${this.props.location.pathname}`,
       identifier: post.id,
-      title: post.title,
+      title: post.frontmatter.title,
     }
+
+    console.log(disqusConfig)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -95,6 +98,7 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
+        siteUrl
         title
         author
       }
