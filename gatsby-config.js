@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Anderson Madeira Blog`,
+    title: `Anderson Madeira`,
     author: `Anderson Madeira`,
     shortDescription: `Artigos sobre desenvolvimento de Software e coisas relacionadas`,
     description: `Artigos sobre desenvolvimento de Software e coisas relacionadas`,
@@ -35,7 +35,7 @@ module.exports = {
             options: {
               maxWidth: 750,
               showCaptions: true,
-              quality: 100,
+              quality: 100
             }
           },
           {

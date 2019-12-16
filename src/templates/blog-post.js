@@ -16,7 +16,7 @@ class BlogPostTemplate extends React.Component {
     const disqusConfig = {
       url: `${siteUrl}${this.props.location.pathname}`,
       identifier: post.id,
-      title: post.frontmatter.title,
+      title: post.frontmatter.title
     }
 
     console.log(disqusConfig)
@@ -44,9 +44,10 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: rhythm(1)
               }}
             >
-              {post.frontmatter.date} - {post.fields.readingTime.text}
+              {post.frontmatter.date} -{' '}
+              {Math.ceil(post.fields.readingTime.minutes)} min de leitura -{' '}
+              <CommentCount config={disqusConfig} placeholder={'...'} />
             </small>
-            <CommentCount config={disqusConfig} placeholder={'...'} />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -54,9 +55,6 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1)
             }}
           />
-          <footer>
-            <Bio />
-          </footer>
         </article>
 
         <nav>
@@ -110,12 +108,12 @@ export const pageQuery = graphql`
       fields {
         slug
         readingTime {
-          text
+          minutes
         }
       }
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD/MM/YYYY")
         description
       }
     }

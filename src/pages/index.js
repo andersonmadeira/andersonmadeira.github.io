@@ -14,11 +14,17 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="Artigos" />
-        <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
-            <article key={node.fields.slug} style={{ marginTop: '1.5em' }}>
+            <article
+              key={node.fields.slug}
+              style={{
+                margin: '1.5em 0',
+                borderRadius: '1em',
+                padding: '1em'
+              }}
+            >
               <header style={{ marginBottom: 5 }}>
                 <h3
                   style={{
@@ -30,7 +36,8 @@ class BlogIndex extends React.Component {
                   </Link>
                 </h3>
                 <small>
-                  {node.frontmatter.date} - {node.fields.readingTime.text}
+                  {node.frontmatter.date} -{' '}
+                  {Math.ceil(node.fields.readingTime.minutes)} min de leitura
                 </small>
               </header>
               <section>
@@ -40,6 +47,9 @@ class BlogIndex extends React.Component {
                   }}
                   style={{ marginBottom: 10 }}
                 />
+                <small>
+                  <Link to={node.fields.slug}>Continuar lendo...</Link>
+                </small>
               </section>
             </article>
           )
@@ -65,11 +75,11 @@ export const pageQuery = graphql`
           fields {
             slug
             readingTime {
-              text
+              minutes
             }
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD/MM/YYYY")
             title
             description
           }

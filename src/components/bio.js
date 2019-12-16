@@ -5,12 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { SocialIcon } from "react-social-icons"
-import Image from "gatsby-image"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import { SocialIcon } from 'react-social-icons'
+import Image from 'gatsby-image'
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography'
 
 const socialIconStyle = { height: 30, width: 30, marginRight: 10 }
 
@@ -19,7 +19,7 @@ const Bio = () => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50) {
+          fixed(width: 75, height: 75) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -44,7 +44,7 @@ const Bio = () => {
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(1.5),
+        marginBottom: rhythm(1.5)
       }}
     >
       <Image
@@ -53,22 +53,20 @@ const Bio = () => {
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          minWidth: 75,
+          borderRadius: `100%`
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: `50%`
         }}
       />
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column'
         }}
       >
-        <p style={{ marginBottom: 5, marginTop: 5 }}>
-          {shortDescription}
-        </p>
+        <p style={{ marginBottom: 5, marginTop: 5 }}>{shortDescription}</p>
         <div>
           <SocialIcon
             style={socialIconStyle}

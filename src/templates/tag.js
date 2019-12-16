@@ -10,11 +10,10 @@ const Tag = ({ location, pageContext, data }) => {
   const { title } = data.site.siteMetadata
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`
+  } com a tag "${tag}"`
   return (
     <Layout location={location} title={title}>
       <SEO title="Artigos" />
-      <Bio />
       <div>
         <h1>{tagHeader}</h1>
         <ul>
