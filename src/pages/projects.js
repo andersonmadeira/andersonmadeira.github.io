@@ -1,13 +1,11 @@
 import React from 'react'
-import kebabCase from 'lodash/kebabCase'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-const TagsPage = ({
+const ProjectsPage = ({
   location,
   data: {
-    allMarkdownRemark: { group },
     site: {
       siteMetadata: { title }
     }
@@ -16,13 +14,13 @@ const TagsPage = ({
   <Layout location={location} title={title}>
     <SEO title="Artigos" />
     <div>
-      <h1>Sobre</h1>
-      <p>Essa página é sobre mim, teoricamente..</p>
+      <h1>Projetos</h1>
+      <p>Essa página vai ter alguns projetos...</p>
     </div>
   </Layout>
 )
 
-export default TagsPage
+export default ProjectsPage
 
 export const pageQuery = graphql`
   query {

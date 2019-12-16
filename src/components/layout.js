@@ -57,6 +57,7 @@ class Layout extends React.Component {
           <MenuItem to={`/`}>Blog</MenuItem>
           <MenuItem to={`/tags`}>Tags</MenuItem>
           <MenuItem to={`/about`}>Sobre</MenuItem>
+          <MenuItem to={`/projects`}>Projetos</MenuItem>
         </nav>
         <main>{children}</main>
         <footer style={{ marginTop: '3em' }}>

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Img from 'gatsby-image'
+import TagList from '../components/TagList'
 
 class BlogIndex extends React.Component {
   render() {
@@ -39,6 +39,9 @@ class BlogIndex extends React.Component {
                 <small>
                   {node.frontmatter.date} -{' '}
                   {Math.ceil(node.fields.readingTime.minutes)} min de leitura
+                </small>
+                <small>
+                  <TagList tags={node.frontmatter.tags} />
                 </small>
               </header>
               <section>
@@ -85,6 +88,7 @@ export const pageQuery = graphql`
             }
           }
           frontmatter {
+            tags
             date(formatString: "DD/MM/YYYY")
             title
             description
