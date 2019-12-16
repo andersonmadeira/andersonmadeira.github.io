@@ -3,10 +3,12 @@ title: React vs Angular - It's All About State?
 date: '2015-05-28T22:40:32.169Z'
 description: This article compares Angular and React ecosystems exposing how the two manage state and data flow in a modern web application.
 tags: ['post', 'tag']
+featuredImage: ./featured-image.jpg
+featuredImageCaption: Caption goes here and there
 ---
 
 With a flood of frontend frameworks and libraries of today, some remain on stage for the fight. Today we'll talk about the core differences between Angular and React.
- 
+
 ## A Brief Introduction
 
 Ok, we all know that Angular and React are two different things. Angular is a full fledged framework that ships all you need to build a full modern web app, while React is _"a JavaScript library for building user interfaces"_.
@@ -21,7 +23,7 @@ To accomplish that we firstly define our service:
 
 ```ts{1,3-5, 10}
 import { Injectable } from '@angular/core'
- 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -39,15 +41,14 @@ export class CountService {
   increment(): number {
     return ++this.count
   }
-  
+
   decrement(): number {
     return --this.count
   }
-
 }
 ```
 
-```bash{outputLines: 1-2} 
+```bash{outputLines: 1-2}
 echo "Foo";
 ```
 

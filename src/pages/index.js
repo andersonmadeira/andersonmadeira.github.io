@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Img from 'gatsby-image'
 
 class BlogIndex extends React.Component {
   render() {
@@ -41,6 +42,11 @@ class BlogIndex extends React.Component {
                 </small>
               </header>
               <section>
+                <Link to={node.fields.slug}>
+                  <Img
+                    sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+                  />
+                </Link>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt
@@ -82,6 +88,13 @@ export const pageQuery = graphql`
             date(formatString: "DD/MM/YYYY")
             title
             description
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }

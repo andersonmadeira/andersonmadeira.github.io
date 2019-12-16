@@ -3,6 +3,8 @@ title: React vs Angular - It's All About State?
 date: '2015-05-28T22:40:32.169Z'
 description: This article compares Angular and React ecosystems exposing how the two manage state and data flow in a modern web application.
 tags: ['post', 'example', 'blog-post', 'content', 'tag']
+featuredImage: ./featured-image.jpg
+featuredImageCaption: Caption goes here and there
 ---
 
 With a flood of frontend frameworks and libraries of today, some remain on stage for the fight. Today we'll talk about the core differences between Angular and React.

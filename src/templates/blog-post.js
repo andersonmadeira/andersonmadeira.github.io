@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import Img from 'gatsby-image'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -41,13 +42,18 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1)
+                marginBottom: rhythm(0.2)
               }}
             >
               {post.frontmatter.date} -{' '}
               {Math.ceil(post.fields.readingTime.minutes)} min de leitura -{' '}
               <CommentCount config={disqusConfig} placeholder={'...'} />
             </small>
+            <Img
+              sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
+              style={{ marginBottom: rhythm(1) }}
+              title={post.frontmatter.featuredImageCaption}
+            />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -115,6 +121,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "DD/MM/YYYY")
         description
+        featuredImageCaption
+        featuredImage {
+          childImageSharp {
+            sizes(maxWidth: 630) {
+              ...GatsbyImageSharpSizes
+            }
+          }
+        }
       }
     }
   }
