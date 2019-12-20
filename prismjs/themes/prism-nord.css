@@ -1,170 +1,204 @@
-/* Generated with http://k88hudson.github.io/syntax-highlighting-theme-generator/www */
-
-/*********************************************************
-* General
+/*
+Name:       Base16 Atelier Sulphurpool Light
+Author:     Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/sulphurpool)
+Prism template by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/prism/)
+Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16)
 */
+code[class*='language-'],
 pre[class*='language-'] {
-  border-radius: 8px;
-  box-shadow: rgba(184, 194, 215, 0.25) 0px 4px 6px,
-    rgba(184, 194, 215, 0.1) 0px 5px 7px;
-  margin-bottom: 1.5em;
-}
-
-pre[class*='language-'],
-code[class*='language-'] {
-  color: #d8dee9;
-  font-size: 1em;
-  text-shadow: none;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: Consolas, Menlo, Monaco, 'Andale Mono WT', 'Andale Mono',
+    'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+    'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+    'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.375;
   direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  line-height: 1.5;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  background: #f5f7ff;
+  color: #5e6687;
 }
-pre[class*='language-']::selection,
-code[class*='language-']::selection,
-pre[class*='language-']::mozselection,
-code[class*='language-']::mozselection {
+
+pre > code[class*='language-'] {
+  font-size: 1em;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
   text-shadow: none;
-  background: none;
+  background: #dfe2f1;
 }
-@media print {
-  pre[class*='language-'],
-  code[class*='language-'] {
-    text-shadow: none;
-  }
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: #dfe2f1;
 }
+
+/* Code blocks */
 pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  background: #2e3440;
 }
+
+/* Inline code */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em 0.3em;
-  margin: 0 0.2em;
+  padding: 0.1em;
   border-radius: 0.3em;
-  color: #5e81ac;
-  background: #eceff4;
 }
-.gatsby-highlight-code-line {
-  background-color: #434C5E;
-  display: block;
-  margin-right: -1em;
-  margin-left: -1em;
-  padding-right: 1em;
-  padding-left: 0.75em;
-}
-/*********************************************************
-* Tokens
-*/
-.namespace {
-  opacity: 0.7;
-}
+
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #606e87;
+  color: #898ea4;
 }
+
 .token.punctuation {
-  color: #81a1c1;
+  color: #5e6687;
 }
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #b48ead;
+
+.token.namespace {
+  opacity: 0.7;
 }
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #a2bf8c;
-}
+
 .token.operator,
+.token.boolean,
+.token.number {
+  color: #c76b29;
+}
+
+.token.property {
+  color: #c08b30;
+}
+
+.token.tag {
+  color: #3d8fd1;
+}
+
+.token.string {
+  color: #22a2c9;
+}
+
+.token.selector {
+  color: #6679cc;
+}
+
+.token.attr-name {
+  color: #c76b29;
+}
+
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #80a2c1;
-  background: none;
+  color: #22a2c9;
 }
-.token.atrule,
+
 .token.attr-value,
-.token.keyword {
-  color: #81a1c1;
+.token.keyword,
+.token.control,
+.token.directive,
+.token.unit {
+  color: #ac9739;
 }
-.token.function {
-  color: #8fbcbc;
-}
+
+.token.statement,
 .token.regex,
-.token.important,
-.token.variable {
-  color: #ee9900;
+.token.atrule {
+  color: #22a2c9;
 }
+
+.token.placeholder,
+.token.variable {
+  color: #3d8fd1;
+}
+
+.token.deleted {
+  text-decoration: line-through;
+}
+
+.token.inserted {
+  border-bottom: 1px dotted #202746;
+  text-decoration: none;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
 .token.important,
 .token.bold {
   font-weight: bold;
 }
-.token.italic {
-  font-style: italic;
+
+.token.important {
+  color: #c94922;
 }
+
 .token.entity {
   cursor: help;
 }
-/*********************************************************
-* Line highlighting
-*/
-pre[data-line] {
-  position: relative;
+
+pre > code.highlight {
+  outline: 0.4em solid #c94922;
+  outline-offset: 0.4em;
 }
-pre[class*='language-'] > code[class*='language-'] {
-  position: relative;
-  z-index: 1;
+
+/* overrides color-values for the Line Numbers plugin
+ * http://prismjs.com/plugins/line-numbers/
+ */
+.line-numbers .line-numbers-rows {
+  border-right-color: #dfe2f1;
 }
+
+.line-numbers-rows > span:before {
+  color: #979db4;
+}
+
+/* overrides color-values for the Line Highlight plugin
+ * http://prismjs.com/plugins/line-highlight/
+ */
 .line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  background: #3b4251;
-  box-shadow: inset 5px 0 0 #d8dee9;
+  background: rgba(107, 115, 148, 0.2);
+  background: -webkit-linear-gradient(
+    left,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(107, 115, 148, 0.2) 70%,
+    rgba(107, 115, 148, 0)
+  );
+}
+
+.gatsby-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  background-color: black;
+  color: white;
   z-index: 0;
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre;
-}
-/*********************************************************
-* Line numbers style
-*/
-pre[class*='language-'].line-numbers {
-  padding-left: 2.8em;
-}
 
-span.line-numbers-rows {
-  padding: 1em 0.5em;
-}
-
-pre.line-numbers > span.line-numbers-rows {
-  border-right: 0;
-}
-
-span.line-numbers-rows > span:before {
-  color: #4c566a;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
 }

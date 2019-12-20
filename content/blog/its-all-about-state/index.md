@@ -21,7 +21,7 @@ Just as its predecessor (angularjs), Angular comes with Dependency Injection so 
 
 To accomplish that we firstly define our service:
 
-```ts{1,3-5, 10}
+```ts:title=count.service.ts
 import { Injectable } from '@angular/core'
 
 @Injectable({
