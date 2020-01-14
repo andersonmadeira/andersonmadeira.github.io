@@ -1,5 +1,3 @@
 // custom typefaces
-import 'typeface-montserrat'
-import 'typeface-merriweather'
-require('./prismjs/themes/prism-nord.css')
-require('prismjs/plugins/line-numbers/prism-line-numbers.css')
+import './prismjs/themes/prism-react.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'

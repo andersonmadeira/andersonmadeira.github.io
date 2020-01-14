@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
-import Img from 'gatsby-image'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -32,7 +30,6 @@ class BlogPostTemplate extends React.Component {
           <header>
             <h1
               style={{
-                marginTop: rhythm(1),
                 marginBottom: 0
               }}
             >
@@ -49,11 +46,6 @@ class BlogPostTemplate extends React.Component {
               {Math.ceil(post.fields.readingTime.minutes)} min de leitura -{' '}
               <CommentCount config={disqusConfig} placeholder={'...'} />
             </small>
-            <Img
-              sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-              style={{ marginBottom: rhythm(1) }}
-              title={post.frontmatter.featuredImageCaption}
-            />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
