@@ -49,11 +49,6 @@ class BlogPostTemplate extends React.Component {
               {Math.ceil(post.fields.readingTime.minutes)} min de leitura -{' '}
               <CommentCount config={disqusConfig} placeholder={'...'} />
             </small>
-            <Img
-              sizes={post.frontmatter.featuredImage.childImageSharp.sizes}
-              style={{ marginBottom: rhythm(1) }}
-              title={post.frontmatter.featuredImageCaption}
-            />
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr

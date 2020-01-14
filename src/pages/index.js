@@ -45,11 +45,6 @@ class BlogIndex extends React.Component {
                 </small>
               </header>
               <section>
-                <Link to={node.fields.slug}>
-                  <Img
-                    sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                  />
-                </Link>
                 <p
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt
